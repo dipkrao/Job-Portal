@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:starter/app/app_binding.dart';
 import 'package:starter/app/data/values/constants.dart';
@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         navigatorKey: GlobalKeys.navigationKey,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme,
-        initialRoute: Routes.SPLASH,
+        initialRoute: Routes.WELCOME,
         getPages: AppPages.pages,
         defaultTransition: Transition.fade,
         localizationsDelegates: localizationsDelegates,

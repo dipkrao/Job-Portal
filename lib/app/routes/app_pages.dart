@@ -1,43 +1,51 @@
 import 'package:get/get.dart';
-import '../modules/auth/login/bindings/auth_login_binding.dart';
-import '../modules/auth/login/views/auth_login_view.dart';
-import '../modules/auth/signup/bindings/auth_signup_binding.dart';
-import '../modules/auth/signup/views/auth_signup_view.dart';
-import '../modules/auth/verify-otp/bindings/auth_verify_otp_binding.dart';
-import '../modules/auth/verify-otp/views/auth_verify_otp_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/splash/bindings/splash_binding.dart';
-import '../modules/splash/views/splash_view.dart';
+import 'package:starter/app/modules/auth/forgotpassword/bindings/forgotpassword_binding.dart';
+import 'package:starter/app/modules/auth/forgotpassword/views/forgotpassword_view.dart';
+import 'package:starter/app/modules/auth/login/bindings/login_binding.dart';
+import 'package:starter/app/modules/auth/login/views/login_view.dart';
+import 'package:starter/app/modules/auth/signup/bindings/signup_binding.dart';
+import 'package:starter/app/modules/auth/signup/views/signup_view.dart';
+
+import '../modules/dashboard/bindings/dashboard_binding.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
+import '../modules/spalsh/bindings/spalsh_binding.dart';
+import '../modules/spalsh/views/spalsh_view.dart';
+import '../modules/welcome/bindings/welcome_binding.dart';
+import '../modules/welcome/views/welcome_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   static final pages = [
     GetPage(
-      name: Routes.SPLASH,
-      page: () => const SplashView(),
-      binding: SplashBinding(),
+      name: Routes.SPALSH,
+      page: () => const SpalshView(),
+      binding: SpalshBinding(),
     ),
     GetPage(
-      name: Routes.AUTH_LOGIN,
-      page: () => const AuthLoginView(),
-      binding: AuthLoginBinding(),
+      name: Routes.WELCOME,
+      page: () => const WelcomeView(),
+      binding: WelcomeBinding(),
     ),
     GetPage(
-      name: Routes.AUTH_VERIFY_OTP,
-      page: () => const AuthVerifyOtpView(),
-      binding: AuthVerifyOtpBinding(),
+      name: Routes.LOGIN,
+      page: () => const LoginView(),
+      binding: LoginBinding(),
     ),
     GetPage(
-      name: Routes.AUTH_SIGNUP,
-      page: () => const AuthSignupView(),
-      binding: AuthSignupBinding(),
+      name: Routes.SIGNUP,
+      page: () => const SignupView(),
+      binding: SignupBinding(),
     ),
     GetPage(
-      name: Routes.HOME,
-      page: () => const HomeView(),
-      binding: HomeBinding(),
+      name: Routes.FORGOTPASSWORD,
+      page: () => const ForgotpasswordView(),
+      binding: ForgotpasswordBinding(),
+    ),
+    GetPage(
+      name: Routes.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
     ),
   ];
 }

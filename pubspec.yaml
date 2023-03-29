@@ -34,9 +34,9 @@ dependencies:
   shimmer: ^2.0.0
 
   # Firebase
-  firebase_core: ^1.13.1
-  firebase_analytics: ^9.1.2
-  firebase_crashlytics: ^2.5.3
+  firebase_core: ^2.8.0
+  firebase_analytics: ^10.1.6
+  firebase_crashlytics: ^3.0.17
 
   # Utilities
   logging: ^1.0.2
@@ -58,6 +58,16 @@ flutter:
 
   assets:
     - assets/lang/
+    - assets/images/home.png
+    - assets/images/solaytic.png
+    - assets/images/kanba.png
+    - assets/images/lighting.png
+    - assets/images/ztos.png
+    - assets/images/kanba.png
+    - assets/images/goldline.png
+    - assets/images/ideaa.png
+    - assets/images/liva.png
+    - assets/images/velocity-9.png
 
   fonts:
     - family: poppins
