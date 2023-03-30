@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:starter/app/modules/auth/login/views/login_view.dart';
-import 'package:starter/app/modules/auth/signup/views/signup_view.dart';
+import 'package:starter/app/routes/app_pages.dart';
 
 import '../controllers/welcome_controller.dart';
 
@@ -54,10 +53,7 @@ class WelcomeView extends GetView<WelcomeController> {
                       children: <Widget>[
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginView()));
+                            Get.toNamed(Routes.LOGIN);
                           },
                           child: const Text(
                             'Login /',
@@ -69,10 +65,7 @@ class WelcomeView extends GetView<WelcomeController> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignupView()));
+                            Get.toNamed(Routes.SIGNUP);
                           },
                           child: const Text(
                             ' SignUp',
@@ -171,7 +164,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 child: ElevatedButton(
                   child: const Text('Get Started'),
                   onPressed: () {
-                    _navigateToSignUpScreen(context);
+                    Get.toNamed(Routes.SIGNUP);
                   },
                 ),
               ),
@@ -408,14 +401,4 @@ class _MyCustomFormState extends State<MyCustomForm> {
           ]))
     ]);
   }
-}
-
-void _navigateToSignUpScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => const SignupView()));
-}
-
-void _navigateToSignInScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => const LoginView()));
 }

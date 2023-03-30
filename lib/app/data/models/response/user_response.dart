@@ -1,20 +1,20 @@
 import 'package:starter/app/data/models/dto/user.dart';
 
 class UserResponse {
-  late User? data;
-  late int statusCode;
+  late UserModel? data;
+  late int code;
 
-  UserResponse({required this.data, required this.statusCode});
+  UserResponse({required this.data, required this.code});
 
   UserResponse.fromJson(Map<String, dynamic> json) {
-    data = json['data'] == null ? null : User.fromJson(json['data']);
-    statusCode = json['statusCode'];
+    data = json['data'] == null ? null : UserModel.fromJson(json['data']);
+    code = json['code'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['data'] = this.data?.toJson();
-    data['statusCode'] = statusCode;
+    data['code'] = code;
     return data;
   }
 }

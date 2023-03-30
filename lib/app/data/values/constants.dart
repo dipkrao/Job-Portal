@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class Timeouts {
   Timeouts._privateConstructor();
 
-  static const CONNECT_TIMEOUT = 10000;
-  static const RECEIVE_TIMEOUT = 10000;
+  static const CONNECT_TIMEOUT = 50000;
+  static const RECEIVE_TIMEOUT = 50000;
 }
 
 class GlobalKeys {

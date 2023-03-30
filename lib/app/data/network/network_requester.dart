@@ -1,10 +1,10 @@
 import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:starter/app/data/values/constants.dart';
 import 'package:starter/app/data/values/env.dart';
-
-import '../../../core/helper/exception_handler.dart';
+import 'package:starter/utils/helper/exception_handler.dart';
 
 class NetworkRequester {
   late Dio _dio;
@@ -18,7 +18,7 @@ class NetworkRequester {
       connectTimeout: Timeouts.CONNECT_TIMEOUT,
       receiveTimeout: Timeouts.RECEIVE_TIMEOUT,
       baseUrl: Env.baseURL,
-      contentType: Headers.formUrlEncodedContentType,
+      contentType: Headers.jsonContentType,
       responseType: ResponseType.json,
       headers: {'Accept': Headers.jsonContentType},
     );

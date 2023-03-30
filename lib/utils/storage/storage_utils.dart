@@ -1,5 +1,4 @@
 import 'package:get_storage/get_storage.dart';
-
 import 'package:starter/app/data/models/dto/user.dart';
 import 'package:starter/app/data/models/response/app_config_response.dart';
 
@@ -14,9 +13,9 @@ class Storage {
   static void setAppConfig(AppConfig appConfig) =>
       _box.write(StorageKeys.APP_CONFIG, appConfig.toJson());
 
-  static User getUser() => User.fromJson(_box.read(StorageKeys.USER));
+  static UserModel getUser() => UserModel.fromJson(_box.read(StorageKeys.USER));
 
-  static void setUser(User? user) =>
+  static void setUser(UserModel? user) =>
       _box.write(StorageKeys.USER, user?.toJson());
 
   static bool isUserExists() => _box.read(StorageKeys.USER) != null;
