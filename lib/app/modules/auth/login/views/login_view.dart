@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:starter/app/routes/app_pages.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -221,7 +222,7 @@ class LoginView extends GetView<LoginController> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              //_navigateToSignUpScreen(context);
+                             Get.toNamed(Routes.SIGNUP);
                             },
                         ),
                       ],

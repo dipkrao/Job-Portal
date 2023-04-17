@@ -15,6 +15,9 @@ class Storage {
 
   static UserModel getUser() => UserModel.fromJson(_box.read(StorageKeys.USER));
 
+  static setToken(String value) => _box.write(StorageKeys.TOKEN, value);
+  static getToken() => _box.read(StorageKeys.TOKEN);
+
   static void setUser(UserModel? user) =>
       _box.write(StorageKeys.USER, user?.toJson());
 
@@ -26,4 +29,5 @@ class StorageKeys {
 
   static const APP_CONFIG = 'app_config';
   static const USER = 'user';
+  static const TOKEN = 'token';
 }

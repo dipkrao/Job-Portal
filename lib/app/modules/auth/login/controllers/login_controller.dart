@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:starter/app/data/models/dto/response.dart';
 import 'package:starter/app/data/models/request/auth_request.dart';
+import 'package:starter/app/data/network/network_requester.dart';
 import 'package:starter/app/data/repository/user_repository.dart';
 import 'package:starter/app/routes/app_pages.dart';
+import 'package:starter/utils/storage/storage_utils.dart';
 
 class LoginController extends GetxController {
   final UserRepository _repository = Get.find<UserRepository>();
@@ -33,10 +35,10 @@ class LoginController extends GetxController {
         password: passwordController.text.trim()));
     // LoadingUtils.hideLoader();
 
-    debugPrint('response========>: ${response.data}');
     if (response.data.code == 200) {
-      debugPrint('success ========>: ${response}');
-      Get.toNamed(Routes.DASHBOARD);
+      Storage.setToken(response.data!.token!);
+      NetworkRequester.authenticated.prepareAuthenticatedRequest();
+      Get.offAllNamed(Routes.DASHBOARD);
     } else {
       // mobileWrapper.errorText = response.error?.message ?? "";
     }
